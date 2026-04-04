@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>LADY GRACE - Váy Thiết Kế Cao Cấp</title>
+
+    <!-- SEO & Meta Tags -->
+    <meta name="description"
+        content="Set thiết kế cao cấp LADY GRACE - Thanh lịch & Tinh tế. Sở hữu ngay với giá cực ưu đãi.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff6ec',
+                            100: '#ffe0d6',
+                            200: '#fcc5b3',
+                            500: '#ea754d',
+                            600: '#f96e40',
+                            900: '#aa1f1f',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'shake': 'shake 2.5s cubic-bezier(.36,.07,.19,.97) both infinite',
+                    },
+                    keyframes: {
+                        shake: {
+                            '0%, 10%, 20%, 30%, 100%': { transform: 'translate3d(0, 0, 0)' },
+                            '2%, 6%, 14%, 18%, 26%': { transform: 'translate3d(-2px, 0, 0) rotate(-5deg)' },
+                            '4%, 8%, 12%, 16%, 24%': { transform: 'translate3d(2px, 0, 0) rotate(5deg)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .slide-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .slide-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Smooth gradient text */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #ff6a00, #ee0979);
+        }
+
+        /* Button gradient */
+        .btn-gradient {
+            background: linear-gradient(to right, #ff6a00, #ee0979);
+            transition: all 0.3s ease;
+        }
+
+        .btn-gradient:hover {
+            box-shadow: 0 10px 20px rgba(238, 9, 121, 0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-950 transition-colors duration-500">
+
+    <!-- LadiPage Wrapper Container (Max Width 420px for mobile-first feel on desktop) -->
+    <main id="app"
+        class="max-w-[420px] mx-auto bg-brand-50 dark:bg-gray-900 min-h-screen relative shadow-[0_0_30px_rgba(0,0,0,0.15)] flex flex-col font-sans text-gray-800 dark:text-gray-200 transition-colors duration-500 pb-24">
+
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle"
+            class="absolute top-4 right-4 z-50 w-10 h-10 rounded-full bg-white/70 dark:bg-gray-800/70 backdrop-blur-md shadow-lg flex items-center justify-center text-brand-600 dark:text-brand-200 focus:outline-none transition-transform hover:scale-110">
+            <i class="fas fa-moon dark:hidden text-lg"></i>
+            <i class="fas fa-sun hidden dark:block text-lg"></i>
+        </button>
+
+        <!-- ============================================== -->
+        <!-- PHẦN 1: HERO SECTION & GALLERY                 -->
+        <!-- ============================================== -->
+        <section class="relative bg-white dark:bg-gray-900 rounded-b-3xl shadow-sm pb-6 z-10">
+
+            <!-- Image Carousel -->
+            <div class="relative w-full h-[520px] overflow-hidden rounded-b-3xl">
+                <div id="slider"
+                    class="flex w-full h-full overflow-x-auto snap-x snap-mandatory hide-scroll scroll-smooth">
+                    <img src="./Anh-DS6889/DS6889-1.jpg" alt="LADY GRACE 1"
+                        class="w-full h-full object-cover object-top shrink-0 snap-center">
+                    <img src="./Anh-DS6889/DS6889-2.jpg" alt="LADY GRACE 2"
+                        class="w-full h-full object-cover object-top shrink-0 snap-center">
+                    <img src="./Anh-DS6889/DS6889-3.jpg" alt="LADY GRACE 3"
+                        class="w-full h-full object-cover object-top shrink-0 snap-center">
+                </div>
+                <!-- Carousel Overlay -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent pointer-events-none">
+                </div>
+
+                <!-- Dots -->
+                <div class="absolute bottom-4 left-0 w-full flex justify-center gap-2" id="sliderDots">
+                    <span
+                        class="w-2.5 h-2.5 rounded-full bg-white/90 shadow transition-all duration-300 dot active-dot"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-white/40 shadow transition-all duration-300 dot"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-white/40 shadow transition-all duration-300 dot"></span>
+                </div>
+            </div>
+
+            <!-- Product Info Container -->
+            <div class="px-5 pt-6 relative -mt-6">
+                <!-- Titles -->
+                <div class="text-center slide-up">
+                    <p class="text-brand-500 font-medium tracking-widest text-xs uppercase mb-1 drop-shadow-sm">Set
+                        Thiết Kế Cao Cấp</p>
+                    <h1 class="font-serif text-4xl font-bold text-gray-900 dark:text-white leading-tight">LADY GRACE
+                    </h1>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 italic">Thanh Lịch & Sang trọng</p>
+                </div>
+
+                <!-- Price Banner -->
+                <div class="mt-5 flex justify-center items-end gap-3 slide-up">
+                    <span class="text-brand-600 font-bold text-3xl tracking-tight">595.000đ</span>
+                    <span class="text-gray-400 line-through text-lg mb-1">1.390.000đ</span>
+                </div>
+
+                <!-- Social Proof -->
+                <div class="mt-4 flex flex-col gap-2 items-center slide-up">
+                    <div
+                        class="flex items-center gap-2 bg-brand-50 hover:bg-brand-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition px-4 py-2 rounded-full border border-brand-200 dark:border-gray-600">
+                        <span class="relative flex h-3 w-3">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-500 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-600"></span>
+                        </span>
+                        <p class="text-xs font-medium text-brand-600 dark:text-brand-500">Đang có 800 người xem sản phẩm
+                            này</p>
+                    </div>
+                    <p
+                        class="text-xs font-semibold text-red-500 dark:text-red-400 bg-red-50 dark:bg-red-900/20 px-3 py-1 rounded-md animate-pulse">
+                        <i class="fas fa-fire mr-1"></i>Sắp hết hàng chỉ còn 50 sản phẩm cuối cùng
+                    </p>
+                </div>
+
+                <!-- Ratings & Sales Summary -->
+                <div
+                    class="flex justify-between items-center mt-5 px-2 text-sm text-gray-600 dark:text-gray-300 slide-up border-t border-gray-100 dark:border-gray-800 pt-4">
+                    <div class="flex items-center gap-1">
+                        <div class="text-yellow-400 text-xs">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <span class="font-semibold">4.9 <span class="font-normal text-xs">(1200 đánh giá)</span></span>
+                    </div>
+                    <div class="font-medium text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">
+                        Đã bán 13.824
+                    </div>
+                </div>
+
+                <!-- Countdown Timer Block -->
+                <div class="mt-6 bg-brand-900 text-white rounded-xl p-4 shadow-lg slide-up overflow-hidden relative">
+                    <div class="absolute -right-4 -top-4 w-16 h-16 bg-white/10 rounded-full blur-xl"></div>
+                    <div class="text-center relative z-10">
+                        <p class="text-xs uppercase tracking-wider font-semibold mb-2">Nhanh tay lên! Áp dụng đến hết
+                            hôm nay</p>
+                        <h3 class="text-brand-200 font-bold text-sm mb-3">Đặt mua hôm nay Nhận ngay giảm giá 50%</h3>
+
+                        <div class="flex justify-center gap-2 text-center" id="countdown">
+                            <div
+                                class="bg-black/30 backdrop-blur-sm rounded-lg p-2 min-w-[50px] border border-white/10">
+                                <span class="block text-2xl font-bold font-serif shadow-sm" id="days">00</span>
+                                <span class="text-[10px] uppercase text-white/80">Ngày</span>
+                            </div>
+                            <span class="text-xl font-bold mt-2 opacity-50">:</span>
+                            <div
+                                class="bg-black/30 backdrop-blur-sm rounded-lg p-2 min-w-[50px] border border-white/10">
+                                <span class="block text-2xl font-bold font-serif shadow-sm" id="hours">00</span>
+                                <span class="text-[10px] uppercase text-white/80">Giờ</span>
+                            </div>
+                            <span class="text-xl font-bold mt-2 opacity-50">:</span>
+                            <div
+                                class="bg-black/30 backdrop-blur-sm rounded-lg p-2 min-w-[50px] border border-white/10">
+                                <span class="block text-2xl font-bold font-serif shadow-sm" id="minutes">00</span>
+                                <span class="text-[10px] uppercase text-white/80">Phút</span>
+                            </div>
+                            <span class="text-xl font-bold mt-2 opacity-50">:</span>
+                            <div
+                                class="bg-brand-600 rounded-lg p-2 min-w-[50px] shadow-[0_0_15px_rgba(249,110,64,0.5)]">
+                                <span class="block text-2xl font-bold font-serif text-white" id="seconds">00</span>
+                                <span class="text-[10px] uppercase text-white/90">Giây</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deal Tag -->
+                <div class="mt-5 flex justify-center items-center gap-2 pb-2 slide-up">
+                    <span
+                        class="bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-xs font-bold px-3 py-1 rounded uppercase tracking-wide">Freeship
+                        TOÀN QUỐC</span>
+                    <span class="bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded animate-pulse-fast">GIẢM
+                        50%</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- PHẦN 2: TRUST BADGES                           -->
+        <!-- ============================================== -->
+        <section class="py-6 px-4 -mt-2 relative z-0 slide-up">
+            <div class="grid grid-cols-3 gap-3">
+                <!-- Badge 1 -->
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-xl p-3 flex flex-col items-center text-center shadow-sm border border-gray-100 dark:border-gray-700 gap-1 h-full hover:-translate-y-1 transition duration-300">
+                    <div
+                        class="w-10 h-10 rounded-full bg-brand-50 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 mb-1">
+                        <i class="fas fa-shield-alt text-lg"></i>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Bảo hành</span>
+                    <p class="text-xs text-gray-700 dark:text-gray-300 font-medium leading-tight">Chính hãng 100% cam
+                        kết hoàn tiền</p>
+                </div>
+                <!-- Badge 2 -->
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-xl p-3 flex flex-col items-center text-center shadow-sm border border-gray-100 dark:border-gray-700 gap-1 h-full hover:-translate-y-1 transition duration-300">
+                    <div
+                        class="w-10 h-10 rounded-full bg-brand-50 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 mb-1">
+                        <i class="fas fa-sync-alt text-lg"></i>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Đổi trả</span>
+                    <p class="text-xs text-gray-700 dark:text-gray-300 font-medium leading-tight">Trả hàng miễn phí
+                        trong 15 ngày</p>
+                </div>
+                <!-- Badge 3 -->
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-xl p-3 flex flex-col items-center text-center shadow-sm border border-gray-100 dark:border-gray-700 gap-1 h-full hover:-translate-y-1 transition duration-300">
+                    <div
+                        class="w-10 h-10 rounded-full bg-brand-50 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 mb-1">
+                        <i class="fas fa-truck text-lg"></i>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Vận chuyển</span>
+                    <p class="text-xs text-gray-700 dark:text-gray-300 font-medium leading-tight">Toàn quốc, thanh toán
+                        khi nhận hàng</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- PHẦN 3: CHI TIẾT SẢN PHẨM & MEDIA              -->
+        <!-- ============================================== -->
+        <section class="bg-white dark:bg-gray-900 py-8 px-5 rounded-3xl shadow-sm slide-up mx-2">
+
+            <div class="text-center mb-6">
+                <h2 class="font-serif text-3xl font-bold text-gray-900 dark:text-white">Thông Số</h2>
+                <div class="h-1 w-12 bg-brand-500 mx-auto mt-2 rounded-full"></div>
+            </div>
+
+            <div class="space-y-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 mb-6">
+                <p><strong class="text-gray-900 dark:text-brand-200">Màu sắc:</strong> Sắc BEGI trẻ trung nâng tầm phong
+                    cách.</p>
+                <p><strong class="text-gray-900 dark:text-brand-200">Chất liệu:</strong> Chất CHÉO Ý phối tơ dệt sợi mềm
+                    mại cao cấp vẫn mềm mại, thiết kế tạo hiệu ứng thon gọn và mang lại vẻ ngoài sang trọng tức thì cho
+                    những bữa đi hay những chốn công sở.</p>
+            </div>
+
+            <!-- Video/Image Details Section -->
+            <div class="space-y-6">
+
+                <!-- Video Section -->
+                <div>
+                    <h3
+                        class="font-bold text-brand-600 dark:text-brand-500 text-sm tracking-wide uppercase mb-3 flex items-center gap-2">
+                        <i class="fas fa-play-circle text-lg"></i> Video sản phẩm
+                    </h3>
+                    <div
+                        class="rounded-2xl overflow-hidden shadow-lg border-4 border-brand-50 dark:border-gray-800 relative group">
+                        <video class="w-full object-cover" controls preload="metadata"
+                            poster="./Anh-DS6889/DS6889-1.jpg">
+                            <source src="./Anh-DS6889/DS6889-Video.mp4" type="video/mp4">
+                            Trình duyệt của bạn không hỗ trợ Video.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Real Photos -->
+                <div class="pt-4">
+                    <h3
+                        class="font-bold text-brand-600 dark:text-brand-500 text-sm tracking-wide uppercase mb-3 flex items-center gap-2">
+                        <i class="fas fa-camera-retro text-lg"></i> Hình ảnh thực tế
+                    </h3>
+
+                    <div class="grid grid-cols-2 gap-3 mb-3">
+                        <img src="./Anh-DS6889/DS6889- Close-up shot - Detail shot - Texture shot 1.jpg" alt="Detail 1"
+                            class="w-full h-auto rounded-xl shadow-sm hover:scale-[1.02] transition">
+                        <img src="./Anh-DS6889/DS6889- Close-up shot - Detail shot - Texture shot 2.jpg" alt="Detail 2"
+                            class="w-full h-auto rounded-xl shadow-sm hover:scale-[1.02] transition">
+                    </div>
+                    <img src="./Anh-DS6889/DS6889- Close-up shot - Detail shot - Texture shot 3.jpg" alt="Detail 3"
+                        class="w-full h-auto rounded-xl shadow-sm hover:scale-[1.02] transition mb-3">
+                    <img src="./Anh-DS6889/DS6889-4.jpg" alt="Detail 4"
+                        class="w-full h-auto rounded-xl shadow-sm hover:scale-[1.02] transition">
+                </div>
+
+                <!-- Size Guide -->
+                <div class="pt-4">
+                    <h3
+                        class="font-bold text-brand-600 dark:text-brand-500 text-sm tracking-wide uppercase mb-3 flex items-center gap-2">
+                        <i class="fas fa-ruler-combined text-lg"></i> Hướng dẫn Chọn SIZE
+                    </h3>
+                    <img src="./Anh-DS6889/Size Guide.PNG" alt="Bảng size"
+                        class="w-full h-auto rounded-xl border border-brand-100 dark:border-gray-700 shadow-sm">
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- PHẦN 4: ĐÁNH GIÁ KHÁCH HÀNG (REVIEWS)          -->
+        <!-- ============================================== -->
+        <section class="py-8 px-5 slide-up">
+            <div class="flex justify-between items-end mb-6">
+                <div>
+                    <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white">176 Bình luận</h3>
+                    <div class="flex items-center text-yellow-400 text-xs mt-1 gap-1">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        <span class="text-gray-500 dark:text-gray-400 ml-1">4.9/5 Sao</span>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <span
+                        class="text-brand-600 dark:text-brand-500 text-xs font-semibold cursor-pointer flex items-center gap-1">Sắp
+                        xếp theo: Hàng đầu <i class="fas fa-chevron-down"></i></span>
+                </div>
+            </div>
+
+            <!-- Review Items -->
+            <div class="space-y-5">
+
+                <!-- Item 1 -->
+                <div
+                    class="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition">
+                    <div class="flex gap-3 relative">
+                        <img src="https://i.pravatar.cc/100?img=1"
+                            class="w-10 h-10 rounded-full border border-gray-200">
+                        <div class="flex-1">
+                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Hà Phương Nguyễn</h4>
+                            <div class="text-yellow-400 text-[10px] mb-2"><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i></div>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-2">Mình đã nhận được
+                                hàng rồi nhé. Rất ưng ý. Đóng gói tốt và giao hàng nhanh.</p>
+                            <div class="flex items-center text-xs text-gray-400 gap-4">
+                                <span>56 phút trước</span>
+                                <span class="hover:text-brand-500 cursor-pointer flex items-center gap-1"><i
+                                        class="far fa-thumbs-up"></i> 6 Like</span>
+                            </div>
+
+                            <!-- Shop Reply -->
+                            <div class="mt-3 bg-brand-50 dark:bg-gray-900 p-3 rounded-xl border-l-2 border-brand-500">
+                                <span class="font-bold text-xs text-gray-800 dark:text-gray-200 block mb-1">DVC - Thương
+                                    Hiệu Thời Trang <i class="fas fa-check-circle text-brand-500 ml-1"></i></span>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Cảm ơn chị Hà Phương đã tin tưởng và
+                                    ủng hộ sản phẩm của DVC ạ, chúc chị luôn xinh đẹp!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div
+                    class="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition">
+                    <div class="flex gap-3 relative">
+                        <div
+                            class="w-10 h-10 rounded-full bg-pink-200 flex items-center justify-center font-bold text-pink-700 text-lg border border-pink-300">
+                            P</div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Phương Linh</h4>
+                            <div class="text-yellow-400 text-[10px] mb-2"><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i></div>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-2">Sản phẩm rất tốt,
+                                mặc đẹp, ôm form, nâng ngực, rất thoải mái :)</p>
+                            <div class="flex items-center text-xs text-gray-400 gap-4">
+                                <span>50 phút trước</span>
+                                <span class="hover:text-brand-500 cursor-pointer flex items-center gap-1"><i
+                                        class="far fa-thumbs-up"></i> 2 Like</span>
+                            </div>
+
+                            <!-- Shop Reply -->
+                            <div class="mt-3 bg-brand-50 dark:bg-gray-900 p-3 rounded-xl border-l-2 border-brand-500">
+                                <span class="font-bold text-xs text-gray-800 dark:text-gray-200 block mb-1">DVC - Thương
+                                    Hiệu Thời Trang <i class="fas fa-check-circle text-brand-500 ml-1"></i></span>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">Dạ DVC cảm ơn đánh giá của chị rất
+                                    nhiều ạ!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div
+                    class="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition">
+                    <div class="flex gap-3 relative">
+                        <img src="https://i.pravatar.cc/100?img=5"
+                            class="w-10 h-10 rounded-full border border-gray-200">
+                        <div class="flex-1">
+                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Ngọc Hằng</h4>
+                            <div class="text-yellow-400 text-[10px] mb-2"><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i></div>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-2">Shop tư vấn rất
+                                nhiệt tình, áo đẹp. Tuy giao hàng hơi chậm chút nhưng vẫn vote 5 sao.</p>
+                            <div class="flex items-center text-xs text-gray-400 gap-4">
+                                <span>15 phút trước</span>
+                                <span class="hover:text-brand-500 cursor-pointer flex items-center gap-1"><i
+                                        class="far fa-thumbs-up"></i> 2 Like</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mt-4 text-center">
+                <button
+                    class="text-sm font-semibold text-brand-600 hover:text-brand-500 py-2 px-4 rounded-full border border-brand-200 bg-white dark:bg-gray-800 dark:border-gray-600 transition">Tất
+                    cả bình luận <i class="fas fa-arrow-right text-xs ml-1"></i></button>
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- PHẦN 5: CAM KẾT & FORM ĐẶT HÀNG (CHECKOUT)     -->
+        <!-- ============================================== -->
+        <section id="checkoutForm"
+            class="mx-3 bg-white dark:bg-gray-800 rounded-3xl shadow-[0_10px_40px_rgba(234,117,77,0.15)] overflow-hidden slide-up border border-brand-100 dark:border-gray-700">
+            <!-- 3 Policies Bar -->
+            <div
+                class="bg-gradient-to-r from-brand-600 to-[#ee0979] text-white text-[10px] font-bold py-3 flex justify-around uppercase text-center shadow-inner">
+                <span class="flex-1 px-1 flex flex-col items-center gap-1"><i class="fas fa-award text-sm"></i> Hàng
+                    chính hãng 100%</span>
+                <span class="flex-1 px-1 border-x border-white/20 flex flex-col items-center gap-1"><i
+                        class="fas fa-truck-fast text-sm"></i> Giao hàng Toàn Quốc</span>
+                <span class="flex-1 px-1 flex flex-col items-center gap-1"><i class="fas fa-box-open text-sm"></i> 15
+                    ngày miễn phí trả hàng</span>
+            </div>
+
+            <div class="p-5 relative">
+                <h2
+                    class="font-serif text-2xl font-bold text-center text-gray-900 dark:text-white mb-4 !tracking-tight">
+                    ĐẶT MUA COMBO <br /><span class="text-gradient">NHẬN NGAY ƯU ĐÃI</span>
+                </h2>
+
+                <!-- Price display again -->
+                <div
+                    class="bg-brand-50 dark:bg-gray-900 rounded-xl p-3 mb-5 border border-brand-100 dark:border-gray-700 flex justify-between items-center">
+                    <div>
+                        <p class="text-brand-600 font-bold text-2xl">595.000đ</p>
+                        <p class="text-gray-400 line-through text-sm">1.390.000đ</p>
+                    </div>
+                    <div class="text-right">
+                        <span
+                            class="bg-red-50 text-red-500 font-bold text-[10px] uppercase px-2 py-1 rounded inline-block mb-1 border border-red-100"><i
+                                class="fas fa-fire mr-1"></i>Chưa tới 10 sản phẩm</span>
+                        <p class="text-[11px] font-semibold text-gray-600 dark:text-gray-300 uppercase"><i
+                                class="fas fa-check text-green-500 mr-1"></i>Freeship toàn quốc</p>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form id="orderForm" class="space-y-4">
+
+                    <div>
+                        <div class="relative flex items-center">
+                            <i class="fas fa-user absolute left-4 text-gray-400"></i>
+                            <input id="fullName" name="fullName" type="text" placeholder="Họ và tên (*)" required
+                                class="w-full pl-10 pr-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all dark:text-white placeholder-gray-400">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="relative flex items-center">
+                            <i class="fas fa-phone-alt absolute left-4 text-gray-400"></i>
+                            <input id="phone" name="phone" type="tel" placeholder="Nhập Số điện thoại (*)" required
+                                pattern="[0-9]{9,11}"
+                                class="w-full pl-10 pr-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all dark:text-white placeholder-gray-400">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="relative flex items-center">
+                            <i class="fas fa-map-marker-alt absolute left-4 text-gray-400"></i>
+                            <input id="address" name="address" type="text" placeholder="Nhập địa chỉ của bạn (*)"
+                                required
+                                class="w-full pl-10 pr-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all dark:text-white placeholder-gray-400">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="relative flex items-center">
+                            <i class="fas fa-tshirt absolute left-4 text-gray-400"></i>
+                            <select id="size" name="size" required
+                                class="w-full pl-10 pr-10 py-3 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all appearance-none cursor-pointer dark:text-white text-gray-700">
+                                <option value="" disabled selected>Chọn SIZE phù hợp (*)</option>
+                                <option value="S">SIZE S (42-49kg)</option>
+                                <option value="M">SIZE M (50-55kg)</option>
+                                <option value="L">SIZE L (56-60kg)</option>
+                                <option value="XL">SIZE XL (61-69kg)</option>
+                            </select>
+                            <i
+                                class="fas fa-chevron-down absolute right-4 text-gray-400 pointer-events-none text-xs"></i>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submitBtn"
+                        class="w-full mt-2 btn-gradient text-white text-lg font-bold py-4 rounded-xl flex flex-col justify-center items-center shadow-lg transform hover:scale-[1.02] active:scale-[0.98] transition relative overflow-hidden">
+                        <span id="btnText">MUA NGAY HÔM NAY <i class="fas fa-arrow-right ml-1"></i></span>
+                        <span id="btnSubText"
+                            class="text-[10px] font-normal uppercase opacity-90 mt-0.5 tracking-wide">Thanh toán khi
+                            nhận hàng</span>
+
+                        <!-- Loading Spinner (Hidden by default) -->
+                        <div id="btnLoading"
+                            class="hidden absolute inset-0 flex items-center justify-center bg-brand-600/90 backdrop-blur-sm z-10 w-full h-full">
+                            <i class="fas fa-circle-notch fa-spin text-2xl"></i>
+                            <span class="ml-2 text-sm font-semibold">Đang xử lý...</span>
+                        </div>
+                    </button>
+
+                    <p class="text-[11px] text-center text-gray-500 dark:text-gray-400 mt-3 px-2 italic">
+                        (Hãy Kiểm tra lại thông tin đặt hàng để tránh sai sót. Shop sẽ gọi lại để tư vấn và xác nhận đơn
+                        hàng)
+                    </p>
+                </form>
+            </div>
+
+        </section>
+
+        <!-- ============================================== -->
+        <!-- PHẦN 6: FOOTER & INFO                          -->
+        <!-- ============================================== -->
+        <footer
+            class="mt-12 bg-white dark:bg-gray-900 border-t border-brand-100 dark:border-gray-800 px-6 py-8 slide-up pb-32">
+
+            <div class="text-center mb-6">
+                <h3 class="font-serif font-bold text-xl tracking-widest text-gray-900 dark:text-white uppercase mb-2">
+                    DVC</h3>
+                <p class="text-xs tracking-wider text-gray-500 dark:text-gray-400 mb-1 uppercase font-semibold">Thương
+                    Hiệu Thời Trang</p>
+                <div class="flex justify-center items-center gap-3 mt-4 text-brand-600">
+                    <a href="#"
+                        class="w-8 h-8 rounded-full bg-brand-50 dark:bg-brand-900/30 flex items-center justify-center hover:bg-brand-500 hover:text-white transition"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#"
+                        class="w-8 h-8 rounded-full bg-brand-50 dark:bg-brand-900/30 flex items-center justify-center hover:bg-brand-500 hover:text-white transition"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#"
+                        class="w-8 h-8 rounded-full bg-brand-50 dark:bg-brand-900/30 flex items-center justify-center hover:bg-brand-500 hover:text-white transition"><i
+                            class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="space-y-4 mb-6 text-sm text-center">
+                <p class="text-gray-700 dark:text-gray-300 font-medium">
+                    <i class="fas fa-phone-alt mr-2 text-brand-500"></i> Hotline: <a href="tel:0393096645"
+                        class="font-bold text-brand-600">0393096645</a>
+                </p>
+                <p
+                    class="text-gray-700 dark:text-gray-300 font-medium pb-4 border-b border-gray-100 dark:border-gray-800">
+                    <i class="fas fa-globe mr-2 text-brand-500"></i> www.dvc.thoitrangthietke
+                </p>
+            </div>
+
+            <div class="mb-6">
+                <h4 class="font-bold text-xs uppercase mb-3 text-gray-400 tracking-wider">Hệ thống chi nhánh</h4>
+                <ul class="text-xs text-gray-600 dark:text-gray-400 space-y-2 font-medium">
+                    <li><strong class="text-gray-800 dark:text-gray-200">Hà Nội:</strong> 123 Phố Tô Hiệu, 68 Xã Đàn, 33
+                        Đội Cấn.</li>
+                    <li><strong class="text-gray-800 dark:text-gray-200">Quảng Ngãi:</strong> 24 Nguyễn Tự Tân.</li>
+                    <li><strong class="text-gray-800 dark:text-gray-200">Thanh Hoá:</strong> 12 Quang Trung.</li>
+                    <li><strong class="text-gray-800 dark:text-gray-200">Đồng Nai:</strong> 163 Phan Trung.</li>
+                    <li><strong class="text-gray-800 dark:text-gray-200">Bình Định:</strong> 176 Phan Bội Châu.</li>
+                    <li><strong class="text-gray-800 dark:text-gray-200">Mỹ:</strong> 8265 Garden grove Blvd, CA.</li>
+                    <li><strong class="text-gray-800 dark:text-gray-200">Cambodia:</strong> 47Eo st 240, Phnom Penh.
+                    </li>
+                </ul>
+            </div>
+
+            <div
+                class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-[10px] text-gray-400 uppercase font-bold tracking-wide mb-6">
+                <a href="#" class="hover:text-brand-500 transition">Returns & Shipping</a>
+                <a href="#" class="hover:text-brand-500 transition">Terms of Use</a>
+                <a href="#" class="hover:text-brand-500 transition">Privacy Policy</a>
+                <a href="#" class="hover:text-brand-500 transition">Contact Us</a>
+            </div>
+
+            <p class="text-center text-[10px] text-gray-400 border-t border-gray-100 dark:border-gray-800 pt-6">
+                ©2025 DVC All rights reserved.
+            </p>
+        </footer>
+
+        <!-- ============================================== -->
+        <!-- FLOATING ELEMENTS                              -->
+        <!-- ============================================== -->
+        <!-- Float Phone Icon -->
+        <a href="tel:0393096645"
+            class="fixed bottom-24 left-4 z-50 w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white shadow-lg shadow-red-500/40 animate-shake hover:bg-red-600 transition ml-[calc(50vw-210px)] max-[420px]:ml-0">
+            <i class="fas fa-phone-alt text-xl"></i>
+            <!-- Ripple effect rings -->
+            <div
+                class="absolute inset-0 rounded-full border border-red-500 animate-[ping_1.5s_cubic-bezier(0,0,0.2,1)_infinite]">
+            </div>
+        </a>
+
+        <!-- Sticky Bottom Bar -->
+        <div
+            class="fixed bottom-0 left-0 right-0 z-50 mx-auto max-w-[420px] bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 px-4 py-3 shadow-[0_-5px_20px_rgba(0,0,0,0.05)] transform translate-y-0 transition-transform flex justify-between items-center bg-opacity-95 backdrop-blur-sm">
+            <div class="flex flex-col">
+                <span class="text-[10px] text-gray-500 dark:text-gray-400 uppercase font-bold tracking-wider">Ưu đãi hôm
+                    nay</span>
+                <span class="text-brand-600 font-bold text-lg leading-tight">595.000đ</span>
+            </div>
+            <a href="#checkoutForm"
+                onclick="document.getElementById('checkoutForm').scrollIntoView({behavior: 'smooth'})"
+                class="btn-gradient text-white font-bold py-3 px-8 rounded-full shadow-lg shadow-brand-500/40 animate-pulse-fast text-sm uppercase tracking-wide">
+                Mua Ngay
+            </a>
+        </div>
+    </main>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // 1. Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        // Check system preference or localStorage
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // 2. Countdown Timer Logic (End of current day)
+        function updateCountdown() {
+            const now = new Date();
+            const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+            const diff = endOfDay - now;
+
+            if (diff > 0) {
+                const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const m = Math.floor((diff / 1000 / 60) % 60);
+                const s = Math.floor((diff / 1000) % 60);
+
+                // Add 0 padding
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
+                document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
+                document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // 3. Simple Carousel Sync
+        const slider = document.getElementById('slider');
+        const dots = document.querySelectorAll('.dot');
+
+        slider.addEventListener('scroll', () => {
+            let index = Math.round(slider.scrollLeft / slider.clientWidth);
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('bg-white/90', 'active-dot');
+                    dot.classList.remove('bg-white/40');
+                } else {
+                    dot.classList.remove('bg-white/90', 'active-dot');
+                    dot.classList.add('bg-white/40');
+                }
+            });
+        });
+
+        // Auto Scroll Slider
+        let autoScrollInterval = setInterval(() => {
+            let nextIndex = Math.round(slider.scrollLeft / slider.clientWidth) + 1;
+            if (nextIndex >= dots.length) nextIndex = 0;
+            slider.scrollTo({ left: nextIndex * slider.clientWidth, behavior: 'smooth' });
+        }, 3500);
+
+        // Pause on touch
+        slider.addEventListener('touchstart', () => clearInterval(autoScrollInterval));
+
+        // 4. Scroll Reveal Animations (Intersection Observer)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.slide-up').forEach(element => {
+            observer.observe(element);
+        });
+
+        // 5. Submit Form data to Google Sheets script
+        const orderForm = document.getElementById('orderForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnSubText = document.getElementById('btnSubText');
+        const btnLoading = document.getElementById('btnLoading');
+
+        // => ĐIỀN URL WEB APP CỦA GOOGLE APPS SCRIPT VÀO ĐÂY:
+        const GOOGLE_SHEET_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyhUdY_RaYWJqyYCXhHnLDUt7EY2rUHarzu_8C-f-OgLYKXv505YSW7chgYU4-Cew/exec';
+
+        orderForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Show loading state
+            btnText.classList.add('opacity-0');
+            btnSubText.classList.add('opacity-0');
+            btnLoading.classList.remove('hidden');
+            submitBtn.disabled = true;
+
+            const formData = new FormData(orderForm);
+
+            // Thêm các thông tin cơ bản về sản phẩm vào đơn hàng
+            formData.append('productName', 'LADY GRACE - Váy Thiết Kế');
+            formData.append('price', '595.000đ');
+
+            // Lấy thời gian hiện tại
+            formData.append('orderTime', new Date().toLocaleString('vi-VN'));
+
+            // Gửi dữ liệu bằng fetch (no-cors mode để tránh lỗi Cross-Origin nếu chưa cấu hình header)
+            // LƯU Ý: Nếu thay bằng URL thực, hãy sửa biến GOOGLE_SHEET_WEB_APP_URL ở trên
+            if (GOOGLE_SHEET_WEB_APP_URL === 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE') {
+                alert('Vui lòng cấu hình URL Google Script Web App trong source code!');
+                setTimeout(() => {
+                    btnText.classList.remove('opacity-0');
+                    btnSubText.classList.remove('opacity-0');
+                    btnLoading.classList.add('hidden');
+                    submitBtn.disabled = false;
+                }, 500);
+                return;
+            }
+
+            fetch(GOOGLE_SHEET_WEB_APP_URL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Tắt cors mode để submit ẩn mượt mà
+            })
+                .then(response => {
+                    // Với no-cors, mọi response sẽ được coi là thành công (opaque response)
+                    alert('🎉 Tuyệt vời! Đơn hàng của bạn đã được ghi nhận.\n\nShop sẽ liên hệ với bạn trong thời gian sớm nhất để xác nhận đơn hàng.');
+                    orderForm.reset();
+                })
+                .catch(error => {
+                    alert('Có lỗi xảy ra trong quá trình gửi đơn hàng. Xin vui lòng thử lại sau hoặc gọi hotline!');
+                })
+                .finally(() => {
+                    // Hide loading state
+                    btnText.classList.remove('opacity-0');
+                    btnSubText.classList.remove('opacity-0');
+                    btnLoading.classList.add('hidden');
+                    submitBtn.disabled = false;
+                });
+        });
+
+    </script>
+</body>
+
+</html>
